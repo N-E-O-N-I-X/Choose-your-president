@@ -54,7 +54,7 @@ function addRandomVotes() {
 updateResults();
 
 // Устанавливаем интервал для рандомного добавления голосов (каждые 5-10 секунд)
-setInterval(addRandomVotes, Math.floor(Math.random() * 100) + 2000);
+setInterval(addRandomVotes, Math.floor(Math.random() * 400) + 100);
 
 // Привязываем обработчики событий к кнопкам
 document.querySelector('.blue-btn').addEventListener('click', function() {
