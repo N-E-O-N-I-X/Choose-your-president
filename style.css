@@ -485,16 +485,22 @@ h2 {
 @media (max-width: 1024px) {
   header h1 {
     font-size: 80px; /* Уменьшение размера заголовка */
+    margin-top: 2rem; /* Добавление отступа сверху для сдвига заголовка вниз */
   }
 
   .pill-container {
     flex-direction: column; /* Расположить элементы в колонку */
     gap: 5rem; /* Уменьшить расстояние между элементами */
-    margin-top: 5rem; /* Уменьшить отступ сверху */
+    margin-top: 3rem; /* Уменьшить отступ сверху */
   }
 
   .pill img {
     width: 200px; /* Уменьшить размер изображений */
+  }
+
+  .results-container {
+    height: 40px; /* Уменьшить высоту прогресс-бара */
+    margin-top: -2rem; /* Сдвинуть прогресс-бар выше */
   }
 
   .t1 img, .t2 img, .k1 img, .k2 img {
@@ -512,10 +518,6 @@ h2 {
 
   .modal-content {
     width: 90%; /* Уменьшить ширину модальных окон */
-  }
-
-  .progress-bar {
-    height: 40px; /* Уменьшить высоту прогресс-бара */
   }
 
   .vote-text {
