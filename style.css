@@ -285,6 +285,16 @@ h2 {
   transition: 0.2s;
 }
 
+.red-btn.active {
+  color: rgb(243, 229, 229);
+  background-color: rgb(179, 64, 64);
+  filter: drop-shadow(0 0 12px rgba(235, 39, 39, 0.8));
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: 0.2s;
+}
+
+
 .blue-btn {
   background-color: rgba(255, 255, 255, 0.808);
   color: rgb(31, 7, 138);
@@ -294,6 +304,15 @@ h2 {
 }
 
 .blue-btn:hover {
+  color: rgb(243, 229, 229);
+  background-color: rgb(44, 113, 160);
+  filter: drop-shadow(0 0 12px rgba(39, 52, 235, 0.8));
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: 0.2s;
+}
+
+.blue-btn.active {
   color: rgb(243, 229, 229);
   background-color: rgb(44, 113, 160);
   filter: drop-shadow(0 0 12px rgba(39, 52, 235, 0.8));
@@ -462,3 +481,4 @@ h2 {
     transform: scale(1.1);
     transition: 0.2s;
   }
+
