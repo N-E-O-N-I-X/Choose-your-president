@@ -34,27 +34,34 @@ function updateResults() {
     document.getElementById('progress-fill').style.setProperty('--harris-percentage', `${harrisPercentage}%`);
 }
 
-// Функция для рандомного добавления голосов
+// Функция для рандомного добавления голосов с приоритетом
 function addRandomVotes() {
-    // Добавляем случайное количество голосов (от 0 до 2) для каждого кандидата
-    let randomHarrisVotes = Math.floor(Math.random() * 3);
-    let randomTrumpVotes = Math.floor(Math.random() * 3);
+    // Вероятность в процентах для Хэррис (например, 70%)
+    let harrisChance = 30;
 
-    // Обновляем голоса и сохраняем в localStorage
-    harrisVotes += randomHarrisVotes;
-    trumpVotes += randomTrumpVotes;
+    // Генерируем случайное число от 0 до 99
+    let random = Math.floor(Math.random() * 100);
+
+    if (random < harrisChance) {
+        // Хэррис получает голос с вероятностью 30%
+        harrisVotes += Math.floor(Math.random() * 3);
+    } else {
+        // Трамп получает голос с вероятностью 70%
+        trumpVotes += Math.floor(Math.random() * 3);
+    }
+
+    // Сохраняем голоса в localStorage
     localStorage.setItem('harrisVotes', harrisVotes);
     localStorage.setItem('trumpVotes', trumpVotes);
 
     // Обновляем результаты
     updateResults();
 }
-
 // Обновляем результаты при загрузке страницы
 updateResults();
 
-
-setInterval(addRandomVotes, 50);
+// Устанавливаем интервал для рандомного добавления голосов (каждые 5-10 секунд)
+setInterval(addRandomVotes, 50)
 
 // Привязываем обработчики событий к кнопкам
 document.querySelector('.blue-btn').addEventListener('click', function() {
@@ -110,3 +117,4 @@ closeModal2.addEventListener('click', () => {
         modalOverlay2.style.display = 'none'; // Скрываем окно после анимации
     }, 300);
 });
+
