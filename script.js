@@ -25,43 +25,38 @@ function calculatePercentage(votes, totalVotes) {
 function updateResults() {
     let totalVotes = harrisVotes + trumpVotes;
     let harrisPercentage = calculatePercentage(harrisVotes, totalVotes);
-    let trumpPercentage = calculatePercentage(trumpVotes, totalVotes);
+    let trumpPercentage = 100 - harrisPercentage;
 
     document.getElementById('harris-votes').textContent = `${harrisPercentage}%`;
     document.getElementById('trump-votes').textContent = `${trumpPercentage}%`;
+
+    // Устанавливаем процент для прогресс-бара
+    document.getElementById('progress-fill').style.setProperty('--harris-percentage', `${harrisPercentage}%`);
 }
 
-// Вызываем функцию обновления результатов при загрузке страницы
-updateResults();
+// Функция для рандомного добавления голосов
+function addRandomVotes() {
+    // Добавляем случайное количество голосов (от 0 до 2) для каждого кандидата
+    let randomHarrisVotes = Math.floor(Math.random() * 3);
+    let randomTrumpVotes = Math.floor(Math.random() * 3);
 
-document.querySelectorAll('.vote-link').forEach(link => {
-  link.addEventListener('click', function() {
-      if (this.querySelector('.blue')) {
-          harrisVotes++;
-          localStorage.setItem('harrisVotes', harrisVotes);
-      } else if (this.querySelector('.red')) {
-          trumpVotes++;
-          localStorage.setItem('trumpVotes', trumpVotes);
-      }
-  });
-});
+    // Обновляем голоса и сохраняем в localStorage
+    harrisVotes += randomHarrisVotes;
+    trumpVotes += randomTrumpVotes;
+    localStorage.setItem('harrisVotes', harrisVotes);
+    localStorage.setItem('trumpVotes', trumpVotes);
 
-function updateResults() {
-  let totalVotes = harrisVotes + trumpVotes;
-  let harrisPercentage = calculatePercentage(harrisVotes, totalVotes);
-  let trumpPercentage = 100 - harrisPercentage;
-
-  document.getElementById('harris-votes').textContent = `${harrisPercentage}%`;
-  document.getElementById('trump-votes').textContent = `${trumpPercentage}%`;
-
-  // Устанавливаем процент для прогресс-бара
-  document.getElementById('progress-fill').style.setProperty('--harris-percentage', `${harrisPercentage}%`);
+    // Обновляем результаты
+    updateResults();
 }
 
-// Update results on page load
+// Обновляем результаты при загрузке страницы
 updateResults();
 
-// Attach event listeners to buttons
+// Устанавливаем интервал для рандомного добавления голосов (каждые 5-10 секунд)
+setInterval(addRandomVotes, Math.floor(Math.random() * 100) + 2000);
+
+// Привязываем обработчики событий к кнопкам
 document.querySelector('.blue-btn').addEventListener('click', function() {
     harrisVotes++;
     localStorage.setItem('harrisVotes', harrisVotes);
@@ -73,7 +68,6 @@ document.querySelector('.red-btn').addEventListener('click', function() {
     localStorage.setItem('trumpVotes', trumpVotes);
     updateResults();
 });
-
        // Получаем элементы для первого модального окна
        const openModal1 = document.getElementById('openModal1');
        const modalOverlay1 = document.getElementById('modalOverlay1');
