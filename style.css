@@ -482,3 +482,43 @@ h2 {
     transition: 0.2s;
   }
 
+@media (max-width: 1024px) {
+  header h1 {
+    font-size: 80px; /* Уменьшение размера заголовка */
+  }
+
+  .pill-container {
+    flex-direction: column; /* Расположить элементы в колонку */
+    gap: 5rem; /* Уменьшить расстояние между элементами */
+    margin-top: 5rem; /* Уменьшить отступ сверху */
+  }
+
+  .pill img {
+    width: 200px; /* Уменьшить размер изображений */
+  }
+
+  .t1 img, .t2 img, .k1 img, .k2 img {
+    width: 150px; /* Уменьшить размер изображений */
+  }
+
+  .eagle img {
+    width: 250px; /* Уменьшить размер изображения орла */
+  }
+
+  .pump button, .x button {
+    font-size: 24px; /* Уменьшить размер текста на кнопках */
+    width: 100px; /* Уменьшить ширину кнопок */
+  }
+
+  .modal-content {
+    width: 90%; /* Уменьшить ширину модальных окон */
+  }
+
+  .progress-bar {
+    height: 40px; /* Уменьшить высоту прогресс-бара */
+  }
+
+  .vote-text {
+    font-size: 1rem; /* Уменьшить размер текста */
+  }
+}
