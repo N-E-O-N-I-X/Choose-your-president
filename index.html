@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your President</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Lilita+One&family=Spicy+Rice&display=swap" rel="stylesheet">
+    <link rel="icon" href="eagle.webp" type="image/x-icon">
+</head>
+<body>
+    <div class="matrix-background">
+        <header>
+            <h1>Choose Your President</h1>
+        </header>
+
+        <main>
+          <div class="pump"><button onclick="">PUMP</button></div>
+          <div class="x"><button onclick="">X</button></div>
+          <div class="t1 box"><img src="t1.jpg"></div>
+          <div class="t2 box"><img src="t2.png"></div>
+          <div class="k1 box"><img src="k1.png"></div>
+          <div class="k2 box"><img src="k2.jpeg"></div>
+          <div class="eagle"><img src="eagle.webp" onclick="playSoundAndMusic()"></div>
+          
+          <div class="pill-container">
+              <div class="pill">
+                  <img src="harris.png" class="blue" alt="Click me 1" id="openModal1">
+                  <button class="blue-btn">Vote</button>
+              </div>
+              <div class="pill">
+                  <img src="trump.png" class="red" alt="Click me 2" id="openModal2">
+                  <button class="red-btn">Vote</button>
+              </div>
+          </div>
+           <!-- Первое модальное окно -->
+    <div class="modal-overlay" id="modalOverlay1">
+      <div class="modal-content">
+          <button class="close-btn" id="closeModal1">X</button>
+          <p>Kamala Harris is the Vice President and the Queen of Grand Speeches! Under her leadership, cryptocurrency will go up and down as often as her policy positions. Hold on tight, because with her on board, even Bitcoin can have a political debate!</p>
+          <img src="harris-bg.png">
+    </div>
+  </div>
+
+  <!-- Второе модальное окно -->
+  <div class="modal-overlay" id="modalOverlay2">
+      <div class="modal-content">
+          <button class="close-btn" id="closeModal2">X</button>
+          <p>Donald Trump is the greatest genius, billionaire, playboy and master negotiator! With him, Bitcoin will soar higher than Trump Tower and your crypto investments will become as huge as his ego!</p>
+          <img src="trump-bg.jpeg">
+      </div>
+  </div>
+          <div class="results-container">
+            <h2>Results</h2>
+            
+            <div class="progress-bar">
+              <div class="progress" id="progress-fill"><div class="result-bar">
+                <span class="names">Kamala Harris: <span id="harris-votes">0%</span></span>
+                <span class="names">Donald Trump: <span id="trump-votes">0%</span></span>
+              </div></div>
+            </div>
+          </div>
+        </main>
+    </div>
+
+    <audio id="sound" src="eagle.mp3"></audio>
+    <audio id="music" src="music.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
