@@ -118,3 +118,22 @@ closeModal2.addEventListener('click', () => {
     }, 300);
 });
 
+// Выбираем обе кнопки
+const redButton = document.querySelector('.red-btn');
+const blueButton = document.querySelector('.blue-btn');
+
+// Добавляем обработчик событий для первой кнопки
+redButton.addEventListener('click', () => {
+  // Убираем класс 'active' у синей кнопки
+  blueButton.classList.remove('active');
+  // Добавляем класс 'active' к красной кнопке
+  redButton.classList.add('active');
+});
+
+// Добавляем обработчик событий для второй кнопки
+blueButton.addEventListener('click', () => {
+  // Убираем класс 'active' у красной кнопки
+  redButton.classList.remove('active');
+  // Добавляем класс 'active' к синей кнопке
+  blueButton.classList.add('active');
+});
