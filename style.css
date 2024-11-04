@@ -348,6 +348,50 @@ h2 {
   filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.2));
 }
 
+.dex {
+  position: absolute;
+  right: 30.5%;
+  width: 60px;
+  height: 60px;
+  border: white 4px solid;
+  border-radius: 40px;
+}
+
+.dex img {
+  width: 45px;
+  cursor: pointer;
+  padding-top: 4px;
+}
+
+.dex:hover {
+  transform: scale(1.2);
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.2));
+}
+
+.tg {
+  position: absolute;
+  right: 20%;
+}
+
+.tg button {
+  width: 180px;
+  font-size: 36px;
+  font-weight: 500;
+  font-family: "Spicy Rice", serif;
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+  border: white 4px solid;
+  border-radius: 40px;
+}
+
+.tg button:hover {
+  transform: scale(1.2);
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.2));
+}
+
   /* Обновленные стили для модальных окон */
 .modal-overlay {
   display: none;
@@ -437,6 +481,10 @@ h2 {
       font-size: 35px;
   }
   .close-btn:hover {
+    background: #9b1c1c;
+    transform: scale(1.1);
+    transition: 0.2s;
+  }
     background: #9b1c1c;
     transform: scale(1.1);
     transition: 0.2s;
