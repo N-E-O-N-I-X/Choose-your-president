@@ -367,26 +367,28 @@ h2 {
   filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.2));
 }
 
-.dex {
+.truth {
   position: absolute;
   left: 33.3%;
-  width: 60px;
+  width: 120px;
   height: 60px;
   border: white 4px solid;
   border-radius: 40px;
 }
 
-.dex img {
-  width: 45px;
+.truth img {
+  width: 90px;
   cursor: pointer;
-  padding-top: 4px;
+  padding-top: 0px;
+  filter: brightness(0%) invert(1);
 }
 
-.dex:hover {
+.truth:hover {
   transform: scale(1.2);
   transition: all 0.3s ease;
   filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.2));
 }
+
 
   /* Обновленные стили для модальных окон */
 .modal-overlay {
